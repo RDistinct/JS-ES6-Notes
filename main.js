@@ -1,3 +1,9 @@
+ /**
+  * ###READ ME!!!####
+  * -> Please uncomment a block of code to run.
+  */
+ 
+ 
  //SCOPE//
 
  //let is for block scoping
@@ -174,16 +180,50 @@
      */
 
     
-     const name = "NAMEVALUE";
-     const  age = "AGEVALUE";
-     const user = { 
-       [name] : "Ben",
-       [age] : 25
-     };
-     console.log(user) //OUTPUT: {NAME:25 AGE:"Ben" }
-     //to access individual properties
-     console.log(user["NAMEVALUE"]) //OUTPUT: 25
-     console.log(user["AGEVALUE"]) //OUTPUT: Ben
-     console.log(user[age]) //OUTPUT: 25 this is the proerty that holds the value's name.
+    //  const name = "NAMEVALUE";
+    //  const  age = "AGEVALUE";
+    //  const user = { 
+    //    [name] : "Ben",
+    //    [age] : 25
+    //  };
+    //  console.log(user) //OUTPUT: {NAME:25 AGE:"Ben" }
+    //  //to access individual properties
+    //  console.log(user["NAMEVALUE"]) //OUTPUT: 25
+    //  console.log(user["AGEVALUE"]) //OUTPUT: Ben
+    //  console.log(user[age]) //OUTPUT: 25 this is the proerty that holds the value's name.
 
      //REST OPERATOR
+     //Eg:
+     let numberArr = [2,4,6,8];
+
+     //function to sum numbers
+    //  function sumNum(par){
+    //   let result = 0;
+    //   for(let i = 0; i < par.length; i ++){
+    //     result += par[i];
+    //   }
+    //   return result;
+    //  }
+    //  console.log(sumNum(numberArr))
+    
+     /**
+      * REST parameter covered by 3 dots ... allows a function to receive indefinite arguments(Could be strings, numbers) and converts them to an array.
+      */
+      // function sumNum(...par){
+      //   console.log(par) // to show that args are converted to array OUTPUT:[5,10,15]
+      //   let result = 0;
+      //   for(let i = 0; i < par.length; i ++){
+      //     result += par[i];
+      //   }
+      //   return result;
+      //  }
+      // console.log(sumNum(5,10,15)); //OUTPUT: 30
+
+      //SPREAD OPERATOR
+      let arrNum = [1,2,3,4,5];
+      console.log(Math.max(arrNum));//OUTPUT IS NaN coz the Math function expects a list of numbers and not an array.that is where the spread operator comes in.
+      console.log(...arrNum);//OUTPUT: 12345 - arrNum is spread.
+      console.log(Math.max(...arrNum)) //OUTPUT: 5
+      /**
+       * it takes an array and spits it up into individual values.Its the oposite of rest operator. Rest is used in args within your function while spread is used to split values in an array.
+       */
