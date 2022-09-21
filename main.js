@@ -194,7 +194,7 @@
 
      //REST OPERATOR
      //Eg:
-     let numberArr = [2,4,6,8];
+    // let numberArr = [2,4,6,8];
 
      //function to sum numbers
     //  function sumNum(par){
@@ -220,10 +220,108 @@
       // console.log(sumNum(5,10,15)); //OUTPUT: 30
 
       //SPREAD OPERATOR
-      let arrNum = [1,2,3,4,5];
-      console.log(Math.max(arrNum));//OUTPUT IS NaN coz the Math function expects a list of numbers and not an array.that is where the spread operator comes in.
-      console.log(...arrNum);//OUTPUT: 12345 - arrNum is spread.
-      console.log(Math.max(...arrNum)) //OUTPUT: 5
+      // let arrNum = [1,2,3,4,5];
+      // console.log(Math.max(arrNum));//OUTPUT IS NaN coz the Math function expects a list of numbers and not an array.that is where the spread operator comes in.
+      // console.log(...arrNum);//OUTPUT: 12345 - arrNum is spread.
+      // console.log(Math.max(...arrNum)) //OUTPUT: 5
       /**
        * it takes an array and spits it up into individual values.Its the oposite of rest operator. Rest is used in args within your function while spread is used to split values in an array.
        */
+
+      //FOR-OF-LOOP
+      /**
+       * is a short-hand syntax for looping through arrays.It grabs individual elements of an array & can do whatever you want with the grabbed data in the block of the for loop.
+       */
+      // let testResults = [1.1,2.0,3.5];
+      // for(testResult of testResults){
+      //   console.log(testResult);    //  OUTPUT: 1.1 2.0 3.5 
+      // }
+
+      //TEMPLATE LITERALS - Strings with extra features
+      /**
+       * They are denoted by backticks (``) & allow us to write multilines of strings. You can also insert a variable in the string without using '+' & spaced quotes. insead use dollar sign and curly braces ${variable name} - value in curly braces chould return a string
+       Is very powerful coz it allows you to insert values to html code when doing DOM manipulation*/
+
+      // let firstName = 'Luke';
+      // let laststName = 'Skywalker';
+      // let fullName = `${firstName} ${laststName}`;
+      // let introduction = `hello im ${fullName} & im a jedi `
+      // //console.log(fullName) //OUTPUT: Luke Skywalker
+      // console.log(introduction); //OUTPUT:HELLO IM LUKE SKYWALKER & IM A JEDI
+
+      // //Can also add string characters to the variable in template string.
+      // let description =  `my name is ${fullName + '!!!!'}`
+      // console.log(description); //OUTPUT: my name is luke skywalker!!!
+      // //To escape template literals, use a back slash \
+      // let description2 =  `my name is \${fullName + '!!!!'}`
+      // console.log(description2);//OUTPUT: my name is \${fullName + '!!!'}
+
+      //DESTRUCTURING ARRAYS - break down complex objects or arrays into simple form
+      //let arrNum = [1,2,3,4,5];
+      // let [a,b] = arrNum;
+      // console.log(a); // OUTPUT 1
+      // console.log(b); // OUTPUT 2
+      /**
+       * its used to extract values from an array.The original array is not destroyed or changed it persists coz destructuring gets copies of values.If you destructure an index value not present in an array, you get undefined
+       */
+      //let [a,b,c,d,e,f] = arrNum
+      //console.log(f) //OUTPUT: undefined
+      //can also use the rest parameter in destructuring to retrieve part of an array
+      // let [a, ...b] = arrNum;
+      // console.log(b); //OUTPUT:[2,3,4,5] 
+
+      //you can have default values in destructuring.When the value is already defined, eg a & 1, then the default value is ignored. But if the value is not defined, eg d, then the default value is used.
+      // let arrNum = [1,2,3];
+      // let [a = 'Default', b,c,d = 'Default']  = arrNum;
+      // console.log(d); //OUTPUT: Default
+      // console.log(a); //OUTPUT: 1
+
+
+      /**
+       * Destructuring can be used to swap values
+       * 
+       
+      let a = 2;
+      let b = 4;
+
+      [b, a] = [a, b];
+      console.log(b); OUTPUT: 2
+      console.log(a); OUTPUT: 4
+      */
+
+      /**Destructuring can also be used to ignore values
+       * 
+       
+      let num = [1,2,3]
+      let [a, ,c] = num;
+      console.log(a,c) //OUTPUT:1 3
+      */
+      /**OR */
+      let [a,b] = [1,2,3]
+      console.log(a,b) //OUTPUT: 1,2
+
+      //Destructuring Objects 
+      let obj = {
+        name:'Jon',
+        age:25,
+        greet:function(){
+          console.log("Hello there")
+        }
+      }
+
+      // let {name,age,greet} = obj;
+      // console.log(name) //OUTPUT: Jon
+      // console.log(age) //OUTPUT: 25
+      // greet(); //Hello there
+      /**
+       * we use curly braces unlike array destructuring.
+       * Also we cant just skip certain value like in arrays, because we are using value names.
+       the names must match for obj destructuring to work*/
+       //let {name, ,greet} = obj; //this wont work because we are referencing properties by name & not position like in array destructuring
+
+       //can also use aliases   
+       let {name,greet:hello} = obj;
+       hello(); //OUTPUT: hello there
+       /** if we use greet() it wont work coz the alias is there as hello
+        * 
+        */
