@@ -12,6 +12,12 @@
 //    let name = "Ben"
 //  }
 //  console.log(name);
+/* ->let can be declared & initialized on different lines.Eg
+    let name;    -->declared 
+    name = 'Joe'; -->initialized
+ * 
+ */
+
 
 //  //CONST//
 //  const ages = [26, 25, 24];
@@ -19,25 +25,29 @@
 //  console.log(ages)
 //  ages.push(22);
 //  console.log(ages) 
+/**
+ * -> All const declarations must be initialized on same line.Eg const name = 'Joe';
+ */
+
 
 // //HOISTING// 
 // //we are using var keyword for learning purposes only
 
-//  var age;
-// age = 26;
-// console.log(age); 
+ var age;
+age = 26;
+console.log(age); 
  
-//  function doIt(){
-//   age = 26;
-// }
-// let age;
-// doIt()
-// console.log(age) 
+ function doIt(){
+  age = 26;
+}
+let age;
+doIt()
+console.log(age) 
 
 // //ARROW FUNCTION//
-// function fn (){
-//   console.log("Hi Ben");
-// } 
+function fn (){
+  console.log("Hi Ben");
+} 
 
 // /*syntax let fn = () => {} 
 // **/
@@ -45,21 +55,21 @@
 // let fn = () => console.log("Hi Ben");
 // fn() 
 
-// // const button = document.getElementById('btn');
-// // let button = document.querySelector('button');
-// // // regular function
-// fun = function (){
-//      document.getElementById('demo').innerHTML = this;
-//    //[object HTMLButtonElement]
-// }
+// const button = document.getElementById('btn');
+// let button = document.querySelector('button');
+// // regular function
+fun = function (){
+     document.getElementById('demo').innerHTML = this;
+   //[object HTMLButtonElement]
+}
 
 // // // arrow function
-//  fun2 = () => {
-//     document.getElementById('demo').innerHTML = this; 
-//     //[object Window]
-//  };
+ fun2 = () => {
+    document.getElementById('demo').innerHTML = this; 
+    //[object Window]
+ };
 
-//  button.addEventListener('click', fun )
+ button.addEventListener('click', fun )
 
 // /**
 // 	this refers to what called the function
@@ -72,48 +82,48 @@
 // */
 
 // //DEFAULT PARAMETERS//
-//  function isEqualTo(num, compared = 2){
-//     return num == compared;
-//  }
-//  console.log(isEqualTo(2 ));
+ function isEqualTo(num, compared = 2){
+    return num == compared;
+ }
+ console.log(isEqualTo(2 ));
 
 // //OR
-//  function isEqualTo(num = 2, compared = 2){
-//      return num == compared;
-//  }
-//  console.log(isEqualTo( ));
+ function isEqualTo(num = 2, compared = 2){
+     return num == compared;
+ }
+ console.log(isEqualTo( ));
 
 // //OR
-//  function isEqualTo(num = 2, compared ){
-//      console.log(num) //3
-//     console.log(compared) //undefined
-//      return num == compared;
-//  }
-//  console.log(isEqualTo(3 )); //false
+ function isEqualTo(num = 2, compared ){
+     console.log(num) //3
+    console.log(compared) //undefined
+     return num == compared;
+ }
+ console.log(isEqualTo(3 )); //false
 
 /*** JS will not pick the values which dont havwe a default value or the arguments which dont have a default value to assign the values you are passing. It still keeps the ordering. Its the FIRST argument that gets set, that is why the value of num is the arg 3 and not param 2.But it works the other way around if its the 2nd param that is defined while the 1st is not.
  * We can also do some calculations on the parameters   function isEqualTo(num = 2, compared = num / 2) OR as the first param  function isEqualTo(num = 2, compared = num) , we may use the variables defined outside the function
  *   
  */
 
-// let val = 10
-//  function isEqualTo(num = 2, compared = val ){
-//     console.log(num) //2
-//     console.log(compared) //10 
-//     return num == compared; //false
-// }
-// console.log(isEqualTo( ));
+let val = 10
+ function isEqualTo(num = 2, compared = val ){
+    console.log(num) //2
+    console.log(compared) //10 
+    return num == compared; //false
+}
+console.log(isEqualTo( ));
 // //cont from Obj Lit
 
 //OBJECT LITERAL
-// let name = 'Ben';
-// let age = 25;
+let name = 'Ben';
+let age = 25;
 
-// let obj = {
-//   name,
-//   age
-// }
-// console.log(obj); //OUTPUT {name:'Ben' age:25}
+let obj = {
+  name,
+  age
+}
+console.log(obj); //OUTPUT {name:'Ben' age:25}
 /***
  * this is because the object will take the valuesfrom the surrounding variables when we dont specify values to be initialized inside the object. It will look for variables declared before the declaration of the object which match the property name & age  
  */
