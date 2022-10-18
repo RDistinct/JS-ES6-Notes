@@ -2,16 +2,56 @@
   * ###READ ME!!!####
   * -> Please uncomment a block of code to run.
   */
- 
+ /**
+  *                     ###CONCEPTS###
+  *   -->SCOPE
+  *   -->HOISTING
+  *   -->ARROW FUNCTION
+  *   -->DEFAULT PARAMETERS
+  *   -->OBJECT LITERALS & OBJECT FIELDS
+  *   -->
+  */
  
  //SCOPE//
+ /**
+  * -> Scope is the current context of execution in which values/expressions can be referenced (visible).
+  * ->If a Variable is outside the current scope,then its not available for use 
+  * ->Scope is hierarchical meaning child scopes have access to parent scope but not the other way round.Parent cant access child scope
+  * 
+  *       TYPES OF SCOPES IN JAVASCRIPT
+  * ->Global scope - default scope for all code running in script mode.
+  * ->Module scope - scope for code running in a module
+  * ->Function scope - scope created by function
+  * ->Block scope - scope created witha pair of currly braces(block).This only scopes LET and CONST declarations.Variables are contained in the block.
+  * -> Due to function scope, a variable declared inside a function cannot be accessed from outside the function or with other functions. 
+  */
+
+
+  function fn(){
+    const name= "Joe"; //Blocks coped
+    console.log(name); 
+  }
+  console.log(name); //ERROR name is not defined
+  
+  //correct scope
+  const name= "Joe"; //Global
+  fn()              //Joe
+  function fn(){
+  console.log(name);
+  }
 
  //let is for block scoping
-//   let name = "One"
-//  if (true){
-//    let name = "Ben"
-//  }
-//  console.log(name);
+  let name = "One"
+ if (true){
+   let name = "Joe"
+ }
+ console.log(name);//OUTPUT : One
+
+
+ if(true){
+	let name = "Jane"
+}
+console.log(name) //ERROR because let is contained in a block
 /* ->let can be declared & initialized on different lines.Eg
     let name;    -->declared 
     name = 'Joe'; -->initialized
