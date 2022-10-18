@@ -375,3 +375,46 @@ console.log(obj); //OUTPUT {name:'Ben' age:25}
        /** if we use greet() it wont work coz the alias is there as hello
         * 
         */
+/**
+   *            ###MODULES###
+   * ->Large Javascript code bases can be split into small packages (modules) that can be imported when needed.
+   * -> To get access to modules first you have to export them using the EXPORT statement.
+   * ->The easiest way is to place the export keyword infront of any item you want to export out of the model.
+   * -> You can export functions, variables var, let, const, & classes.But you cant use export inside a function.
+   * 
+   * EXPORT FEATURES
+   * -> To export all items you need in a single EXPORT statement is to use export at the end of the module file followed by a comma separated list of features you want to export wrapped in curly braces.  
+   * Eg 
+   */
+  //export a single item
+  export const name = "Joe";
+  export const age = 25;
+
+  export function getVolume (length, width, height){
+    return lenght * width * height;
+  }
+
+  //export multiple items
+  export {name, getVolume, age};
+
+  /**
+   * IMPORT FEATURES
+   * ->tO USE FEATURES FROM another file you first have to export those features inorder to import them.
+   * ->To import, use comma separated list of features you want to import wrapped in curly braces followed by keyword from, followed by the file path to the module(similar to how we link files using paths to html files.) Eg
+   *  
+   */
+  import {name, getVolume, age} from './calculate.js';
+
+  //APPLY A MODULE TO HTML
+  /**->Is similar to how we apply regular scripts to a page, but with included type = "module" in the script element 
+   * ->You can also embed the module's script directly into HTML by placing the JS code within the body of the script.
+   */
+  //Applying module to html
+   <script type = "module" src = "main.js">./path</script>
+
+   //Embedding JS code
+  <script type = "module" src = "main.js">
+    //MODULE CODE
+  </script>
+
+  //-> Import & Export are used on modules only and not on regular scripts 
